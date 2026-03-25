@@ -1,0 +1,73 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" rx="32" fill="#EEF4FB"/>
+  <rect x="34" y="34" width="1532" height="912" rx="28" fill="url(#bg)"/>
+  <rect x="78" y="86" width="280" height="808" rx="28" fill="rgba(255,255,255,0.82)"/>
+  <text x="118" y="146" fill="#145CEB" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700">LabReport Copilot</text>
+  <text x="118" y="190" fill="#0F172A" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700">科研组会 Copilot</text>
+  <text x="118" y="234" fill="#475569" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">面向中国科研用户的组会工作流平台</text>
+  <g fill="#334155" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20">
+    <rect x="104" y="290" width="228" height="58" rx="18" fill="#DBEAFE"/><text x="136" y="326">首页</text>
+    <text x="136" y="396">科研画像</text>
+    <text x="136" y="456">导师画像</text>
+    <text x="136" y="516">材料库</text>
+    <text x="136" y="576">论文调研</text>
+    <text x="136" y="636">生成组会</text>
+    <text x="136" y="696">历史记录</text>
+    <text x="136" y="756">LLM 配置</text>
+  </g>
+
+  <rect x="396" y="86" width="1128" height="172" rx="28" fill="rgba(255,255,255,0.88)"/>
+  <text x="446" y="142" fill="#145CEB" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="700">MVP 工作台</text>
+  <text x="446" y="196" fill="#0F172A" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="44" font-weight="700">为中国科研组会场景设计的 AI Agent 平台</text>
+  <text x="446" y="236" fill="#475569" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20">自动整理科研进展、文献调研、实验结果与导师关注点，输出适合飞书云文档的结构化组会报告。</text>
+
+  <rect x="396" y="284" width="690" height="330" rx="28" fill="rgba(255,255,255,0.9)"/>
+  <text x="438" y="338" fill="#0F172A" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="700">产品概览</text>
+  <text x="438" y="374" fill="#64748B" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">围绕组会真实工作流，而不是单次文本生成。</text>
+  <g>
+    <rect x="438" y="408" width="282" height="72" rx="18" fill="#F8FAFC"/>
+    <rect x="742" y="408" width="282" height="72" rx="18" fill="#F8FAFC"/>
+    <rect x="438" y="496" width="282" height="72" rx="18" fill="#F8FAFC"/>
+    <rect x="742" y="496" width="282" height="72" rx="18" fill="#F8FAFC"/>
+    <text x="462" y="451" fill="#334155" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">自动生成周组会提纲与正文</text>
+    <text x="766" y="451" fill="#334155" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">按导师风格调整表达</text>
+    <text x="462" y="539" fill="#334155" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">沉淀历史材料形成长期记忆</text>
+    <text x="766" y="539" fill="#334155" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18">支持文献调研与飞书输出</text>
+  </g>
+
+  <rect x="1110" y="284" width="414" height="330" rx="28" fill="rgba(255,255,255,0.9)"/>
+  <g font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="1146" y="330" width="342" height="76" rx="20" fill="#F8FAFC"/>
+    <rect x="1146" y="422" width="342" height="76" rx="20" fill="#F8FAFC"/>
+    <rect x="1146" y="514" width="342" height="76" rx="20" fill="#F8FAFC"/>
+    <text x="1174" y="362" fill="#64748B" font-size="16">定位</text>
+    <text x="1174" y="390" fill="#0F172A" font-size="28" font-weight="700">科研组会 Copilot</text>
+    <text x="1174" y="454" fill="#64748B" font-size="16">当前阶段</text>
+    <text x="1174" y="482" fill="#0F172A" font-size="28" font-weight="700">MVP + LLM 接入</text>
+    <text x="1174" y="546" fill="#64748B" font-size="16">输出重点</text>
+    <text x="1174" y="574" fill="#0F172A" font-size="28" font-weight="700">Markdown / 飞书友好</text>
+  </g>
+
+  <rect x="396" y="640" width="350" height="220" rx="28" fill="rgba(255,255,255,0.9)"/>
+  <rect x="785" y="640" width="350" height="220" rx="28" fill="rgba(255,255,255,0.9)"/>
+  <rect x="1174" y="640" width="350" height="220" rx="28" fill="rgba(255,255,255,0.9)"/>
+  <g font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif">
+    <text x="432" y="694" fill="#0F172A" font-size="28" font-weight="700">工作流 A</text>
+    <text x="432" y="730" fill="#64748B" font-size="18">普通周组会生成</text>
+    <text x="432" y="780" fill="#334155" font-size="18">结合本周进展、导师风格与历史材料，直接输出结构化 Markdown。</text>
+    <text x="821" y="694" fill="#0F172A" font-size="28" font-weight="700">工作流 C</text>
+    <text x="821" y="730" fill="#64748B" font-size="18">文献调研组会</text>
+    <text x="821" y="780" fill="#334155" font-size="18">自动整理代表论文、亮点、局限性与对本课题的启发。</text>
+    <text x="1210" y="694" fill="#0F172A" font-size="28" font-weight="700">工作流 E</text>
+    <text x="1210" y="730" fill="#64748B" font-size="18">长期科研记忆</text>
+    <text x="1210" y="780" fill="#334155" font-size="18">让历史组会、调研和材料沉淀为持续可复用的科研档案。</text>
+  </g>
+
+  <defs>
+    <linearGradient id="bg" x1="70" y1="50" x2="1530" y2="946" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="0.52" stop-color="#F1F6FC"/>
+      <stop offset="1" stop-color="#E8F0F8"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="1600" height="920" viewBox="0 0 1600 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="920" rx="32" fill="#F3F7FB"/>
+  <text x="72" y="82" fill="#0F172A" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="42" font-weight="700">LabReport Copilot Architecture</text>
+  <text x="72" y="122" fill="#475569" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20">从输入材料到 Agent 编排、LLM Gateway、导出层与长期科研记忆的完整流转。</text>
+
+  <g font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="72" y="180" width="300" height="580" rx="28" fill="#FFFFFF"/>
+    <text x="108" y="234" fill="#145CEB" font-size="22" font-weight="700">Input Layer</text>
+    <text x="108" y="286" fill="#0F172A" font-size="28" font-weight="700">科研用户输入</text>
+    <text x="108" y="350" fill="#334155" font-size="20">• 本周进展</text>
+    <text x="108" y="396" fill="#334155" font-size="20">• 历史文档 / PDF / Markdown</text>
+    <text x="108" y="442" fill="#334155" font-size="20">• 实验图 / 表格截图 / 流程图</text>
+    <text x="108" y="488" fill="#334155" font-size="20">• 语音转写文本</text>
+    <text x="108" y="534" fill="#334155" font-size="20">• 用户科研画像</text>
+    <text x="108" y="580" fill="#334155" font-size="20">• 导师风格画像</text>
+    <text x="108" y="650" fill="#64748B" font-size="18">统一进入组会场景上下文</text>
+
+    <rect x="434" y="180" width="390" height="580" rx="28" fill="#FFFFFF"/>
+    <text x="470" y="234" fill="#145CEB" font-size="22" font-weight="700">Agent Workflow</text>
+    <text x="470" y="286" fill="#0F172A" font-size="28" font-weight="700">多阶段任务编排</text>
+    <rect x="470" y="328" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="362" fill="#1E3A8A" font-size="18">1. 用户画像理解 Agent</text>
+    <rect x="470" y="396" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="430" fill="#1E3A8A" font-size="18">2. 导师风格建模 Agent</text>
+    <rect x="470" y="464" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="498" fill="#1E3A8A" font-size="18">3. 历史材料总结 Agent</text>
+    <rect x="470" y="532" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="566" fill="#1E3A8A" font-size="18">4. 文献调研 / 多模态 Agent</text>
+    <rect x="470" y="600" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="634" fill="#1E3A8A" font-size="18">5. 组会结构规划 Agent</text>
+    <rect x="470" y="668" width="318" height="54" rx="16" fill="#EFF6FF"/><text x="494" y="702" fill="#1E3A8A" font-size="18">6. 汇报内容写作 Agent</text>
+
+    <rect x="886" y="180" width="300" height="270" rx="28" fill="#FFFFFF"/>
+    <text x="922" y="234" fill="#145CEB" font-size="22" font-weight="700">LLM Gateway</text>
+    <text x="922" y="286" fill="#0F172A" font-size="28" font-weight="700">可配置模型层</text>
+    <text x="922" y="352" fill="#334155" font-size="20">• Azure OpenAI</text>
+    <text x="922" y="396" fill="#334155" font-size="20">• OpenAI Compatible</text>
+    <text x="922" y="440" fill="#334155" font-size="20">• Mock / Fallback</text>
+
+    <rect x="886" y="490" width="300" height="270" rx="28" fill="#FFFFFF"/>
+    <text x="922" y="544" fill="#145CEB" font-size="22" font-weight="700">Storage Layer</text>
+    <text x="922" y="596" fill="#0F172A" font-size="28" font-weight="700">长期科研记忆</text>
+    <text x="922" y="662" fill="#334155" font-size="20">• 用户画像</text>
+    <text x="922" y="706" fill="#334155" font-size="20">• 导师画像</text>
+    <text x="922" y="750" fill="#334155" font-size="20">• 材料库 / 历史报告</text>
+
+    <rect x="1248" y="180" width="280" height="580" rx="28" fill="#FFFFFF"/>
+    <text x="1284" y="234" fill="#145CEB" font-size="22" font-weight="700">Output Layer</text>
+    <text x="1284" y="286" fill="#0F172A" font-size="28" font-weight="700">结构化输出</text>
+    <text x="1284" y="352" fill="#334155" font-size="20">• Markdown 组会报告</text>
+    <text x="1284" y="398" fill="#334155" font-size="20">• 文献调研综述</text>
+    <text x="1284" y="444" fill="#334155" font-size="20">• 飞书导出预留</text>
+    <text x="1284" y="490" fill="#334155" font-size="20">• HTML / PDF 预留</text>
+    <text x="1284" y="560" fill="#64748B" font-size="18">适配中国实验室真实汇报结构</text>
+  </g>
+
+  <path d="M372 468H434" stroke="#94A3B8" stroke-width="4"/>
+  <path d="M824 320H886" stroke="#94A3B8" stroke-width="4"/>
+  <path d="M824 624H886" stroke="#94A3B8" stroke-width="4"/>
+  <path d="M1186 320H1248" stroke="#94A3B8" stroke-width="4"/>
+  <path d="M1186 624H1248" stroke="#94A3B8" stroke-width="4"/>
+</svg>
