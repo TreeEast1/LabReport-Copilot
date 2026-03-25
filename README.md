@@ -135,7 +135,47 @@ MVP 中已预留以下 Agent 职责模块：
 - 汇报内容写作 Agent
 - Markdown / 飞书输出 Agent
 
-当前版本以内置规则引擎和模拟输出为主，方便后续替换为真实 LLM、搜索服务、OCR、图像理解和飞书开放平台集成。
+当前版本已支持可配置的 LLM Provider：
+
+- `azure_openai`
+- `openai_compatible`
+- `mock`
+
+当真实 LLM 调用失败时，系统会自动降级到内置规则流程，保证 MVP 仍可继续使用。
+
+## LLM 配置
+
+项目默认在后端 `apps/api/.env` 中配置模型接口，避免前端直接暴露密钥。
+
+### Azure OpenAI
+
+```bash
+LLM_PROVIDER=azure_openai
+LLM_MODEL=gpt-5.2
+AZURE_OPENAI_ENDPOINT=你的 Azure Endpoint
+AZURE_OPENAI_API_KEY=你的 Azure API Key
+AZURE_OPENAI_DEPLOYMENT=gpt-5.2
+AZURE_OPENAI_API_VERSION=2024-10-21
+```
+
+说明：
+
+- `AZURE_OPENAI_DEPLOYMENT` 填你在 Azure 上的部署名
+- 默认示例使用 `gpt-5.2`
+- 如果你的 Azure 版本或路由策略不同，可自行调整 `AZURE_OPENAI_API_VERSION`
+
+### OpenAI 兼容接口
+
+```bash
+LLM_PROVIDER=openai_compatible
+LLM_MODEL=gpt-5.2
+OPENAI_COMPATIBLE_BASE_URL=https://your-provider.example.com
+OPENAI_COMPATIBLE_API_KEY=your_key
+OPENAI_COMPATIBLE_MODEL=gpt-5.2
+OPENAI_COMPATIBLE_PATH=/v1/chat/completions
+```
+
+适合接入各类兼容 OpenAI Chat Completions 的模型网关或代理服务。
 
 ## 后续规划
 

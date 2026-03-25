@@ -8,7 +8,8 @@ const navItems = [
   { href: "/materials", label: "材料库" },
   { href: "/literature", label: "论文调研" },
   { href: "/reports/new", label: "生成组会" },
-  { href: "/history", label: "历史记录" }
+  { href: "/history", label: "历史记录" },
+  { href: "/settings/llm", label: "LLM 配置" }
 ];
 
 export function PageShell({
