@@ -8,9 +8,11 @@ __pycache__/
 .env.local
 .env.*.local
 node_modules/
+.npm-cache/
 .next/
 dist/
 coverage/
 apps/api/uploads/
 apps/api/data/
 apps/web/.next/
+apps/web/.npm-cache/
