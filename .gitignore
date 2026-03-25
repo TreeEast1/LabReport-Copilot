@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+.venv
+.python-version
+__pycache__/
+*.pyc
+.env
+.env.local
+.env.*.local
+node_modules/
+.next/
+dist/
+coverage/
+apps/api/uploads/
+apps/api/data/
+apps/web/.next/

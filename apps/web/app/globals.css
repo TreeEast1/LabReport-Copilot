@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-mist text-ink antialiased;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+input,
+textarea,
+select {
+  @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/10;
+}
+
+textarea {
+  @apply min-h-28 resize-y;
+}
+
+button {
+  @apply transition;
+}
