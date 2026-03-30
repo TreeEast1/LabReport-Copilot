@@ -6,8 +6,20 @@
   color-scheme: light;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-mist text-ink antialiased;
+}
+
+::selection {
+  @apply bg-accent text-white;
 }
 
 a {
@@ -17,13 +29,21 @@ a {
 input,
 textarea,
 select {
-  @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/10;
+  @apply w-full rounded-2xl border border-line bg-white/95 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-accent focus:ring-4 focus:ring-accent/10;
 }
 
 textarea {
   @apply min-h-28 resize-y;
 }
 
+input[type="checkbox"] {
+  @apply h-4 w-4 rounded border-line text-accent focus:ring-accent/20;
+}
+
+input[type="file"] {
+  @apply cursor-pointer bg-white;
+}
+
 button {
-  @apply transition;
+  @apply transition disabled:cursor-not-allowed disabled:opacity-60;
 }

@@ -24,10 +24,11 @@ export default function LLMSettingsPage() {
     <PageShell
       title="LLM 配置说明"
       description="项目后端已经抽象出可替换的 LLM Provider。开源后，使用者只需要在 `apps/api/.env` 中填入自己的接口配置即可。"
+      eyebrow="LLM Settings"
     >
       <div className="grid gap-6">
-        <SectionCard title="配置位置" description="当前版本采用后端环境变量配置，不在前端页面保存密钥，避免把 key 暴露到浏览器侧。">
-          <pre className="rounded-2xl border border-line bg-slate-950 p-4 text-xs leading-6 text-slate-100">
+        <SectionCard title="配置位置" description="当前版本采用后端环境变量配置，不在前端页面保存密钥，避免把 key 暴露到浏览器侧。" tone="accent">
+          <pre className="rounded-[24px] border border-slate-800 bg-slate-950 p-4 text-xs leading-6 text-slate-100">
             <code>{`cp apps/api/.env.example apps/api/.env`}</code>
           </pre>
         </SectionCard>
@@ -36,7 +37,7 @@ export default function LLMSettingsPage() {
           <SectionCard key={provider.name} title={provider.name} description={provider.description}>
             <div className="space-y-2">
               {provider.vars.map((item) => (
-                <div key={item} className="rounded-2xl border border-line bg-slate-50 px-4 py-3 text-sm text-slate-700">
+                <div key={item} className="rounded-[22px] border border-line bg-slate-50/80 px-4 py-3 text-sm text-slate-700">
                   {item}
                 </div>
               ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FormField } from "@/components/form-field";
 import { PageShell } from "@/components/page-shell";
 import { SectionCard } from "@/components/section-card";
 import { TagList } from "@/components/tag-list";
@@ -42,28 +43,40 @@ export default function AdvisorPage() {
   };
 
   const onSave = async () => {
-    await api.saveAdvisorProfile(form);
-    setStatus("导师画像已保存");
+    try {
+      await api.saveAdvisorProfile(form);
+      setStatus("导师画像已保存");
+    } catch {
+      setStatus("保存失败，请确认后端已启动");
+    }
   };
 
   return (
-    <PageShell title="导师风格画像" description="系统会依据导师偏好自动调整汇报结构、铺垫方式、详略比例和批判性总结力度。">
-      <SectionCard title="导师偏好配置" description={status}>
+    <PageShell
+      title="导师风格画像"
+      description="把导师真正关心的点和表达偏好提前沉淀下来，生成的组会内容会更接近真实沟通语境，而不是通用模板。"
+      eyebrow="Advisor Profile"
+    >
+      <SectionCard title="导师偏好配置" description={status} tone="accent">
         <div className="grid gap-4 md:grid-cols-2">
-          <input
-            value={form.advisorName}
-            onChange={(e) => setForm((prev) => ({ ...prev, advisorName: e.target.value }))}
-            placeholder="导师 / 老板称呼"
-          />
-          <select value={form.tone} onChange={(e) => setForm((prev) => ({ ...prev, tone: e.target.value }))}>
-            <option>严格</option>
-            <option>温和</option>
-            <option>务实</option>
-            <option>学术导向</option>
-          </select>
+          <FormField label="导师 / 老板称呼">
+            <input
+              value={form.advisorName}
+              onChange={(e) => setForm((prev) => ({ ...prev, advisorName: e.target.value }))}
+              placeholder="例如：王老师 / 老板"
+            />
+          </FormField>
+          <FormField label="整体风格">
+            <select value={form.tone} onChange={(e) => setForm((prev) => ({ ...prev, tone: e.target.value }))}>
+              <option>严格</option>
+              <option>温和</option>
+              <option>务实</option>
+              <option>学术导向</option>
+            </select>
+          </FormField>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-line bg-slate-50 p-4">
+        <div className="mt-4 rounded-[24px] border border-line bg-white/80 p-4">
           <p className="text-sm font-medium text-slate-700">重点关注标签</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {focusOptions.map((tag) => {
@@ -74,7 +87,7 @@ export default function AdvisorPage() {
                   type="button"
                   onClick={() => toggleFocus(tag)}
                   className={`rounded-full px-3 py-2 text-sm ${
-                    active ? "bg-accent text-white" : "border border-line bg-white text-slate-700"
+                    active ? "bg-slate-900 text-white" : "border border-line bg-white text-slate-700"
                   }`}
                 >
                   {tag}
@@ -88,16 +101,20 @@ export default function AdvisorPage() {
         </div>
 
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <input
-            value={form.expressionPreference}
-            onChange={(e) => setForm((prev) => ({ ...prev, expressionPreference: e.target.value }))}
-            placeholder="表达偏好，例如：先结论后过程 / 背景铺垫充分"
-          />
-          <textarea
-            value={form.notes}
-            onChange={(e) => setForm((prev) => ({ ...prev, notes: e.target.value }))}
-            placeholder="补充备注，例如：老师比较关注基线对比是否充分、图表是否标清楚坐标含义"
-          />
+          <FormField label="表达偏好">
+            <input
+              value={form.expressionPreference}
+              onChange={(e) => setForm((prev) => ({ ...prev, expressionPreference: e.target.value }))}
+              placeholder="例如：先结论后过程 / 背景铺垫充分"
+            />
+          </FormField>
+          <FormField label="补充备注">
+            <textarea
+              value={form.notes}
+              onChange={(e) => setForm((prev) => ({ ...prev, notes: e.target.value }))}
+              placeholder="例如：老师很关注基线是否充分、图表是否有可解释性"
+            />
+          </FormField>
         </div>
 
         <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -119,7 +136,7 @@ export default function AdvisorPage() {
           </label>
         </div>
 
-        <button onClick={onSave} className="mt-6 rounded-2xl bg-accent px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+        <button onClick={onSave} className="mt-6 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800">
           保存导师画像
         </button>
       </SectionCard>

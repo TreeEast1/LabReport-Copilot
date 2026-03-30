@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FormField } from "@/components/form-field";
 import { PageShell } from "@/components/page-shell";
 import { SectionCard } from "@/components/section-card";
 import { api } from "@/lib/api";
@@ -28,29 +29,43 @@ export default function MaterialsPage() {
       setStatus("请先选择文件");
       return;
     }
-    await api.uploadMaterial({ file, materialType, description });
-    setDescription("");
-    setFile(null);
-    setStatus("材料上传成功");
-    await loadMaterials();
+    try {
+      await api.uploadMaterial({ file, materialType, description });
+      setDescription("");
+      setFile(null);
+      setStatus("材料上传成功");
+      await loadMaterials();
+    } catch {
+      setStatus("上传失败，请确认后端已启动");
+    }
   };
 
   return (
-    <PageShell title="历史材料库" description="上传往期组会、论文摘要、实验记录、截图、会议纪要等材料，系统会把它们作为后续汇报生成的长期记忆。">
+    <PageShell
+      title="历史材料库"
+      description="把往期组会、论文摘要、实验记录、截图和会议纪要都放进来，系统后续生成时会优先参考这些真实材料，而不是空泛补全。"
+      eyebrow="Materials"
+    >
       <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
-        <SectionCard title="上传材料" description={status}>
+        <SectionCard title="上传材料" description={status} tone="accent">
           <div className="grid gap-4">
-            <select value={materialType} onChange={(e) => setMaterialType(e.target.value)}>
-              <option>历史组会</option>
-              <option>论文摘要</option>
-              <option>实验记录</option>
-              <option>会议纪要</option>
-              <option>聊天摘要</option>
-              <option>图片截图</option>
-            </select>
-            <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="补充说明，例如：2026-03-20 组会 PPT 截图、导师反馈摘要" />
-            <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-            <button onClick={onUpload} className="rounded-2xl bg-accent px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+            <FormField label="材料类型">
+              <select value={materialType} onChange={(e) => setMaterialType(e.target.value)}>
+                <option>历史组会</option>
+                <option>论文摘要</option>
+                <option>实验记录</option>
+                <option>会议纪要</option>
+                <option>聊天摘要</option>
+                <option>图片截图</option>
+              </select>
+            </FormField>
+            <FormField label="材料说明" hint="可选">
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="例如：2026-03-20 组会 PPT 截图、导师反馈摘要" />
+            </FormField>
+            <FormField label="选择文件">
+              <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
+            </FormField>
+            <button onClick={onUpload} className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800">
               上传并入库
             </button>
           </div>
@@ -59,7 +74,7 @@ export default function MaterialsPage() {
         <SectionCard title="历史材料列表" description="支持按类型继续扩展筛选、检索和向量召回。">
           <div className="space-y-3">
             {materials.map((item) => (
-              <div key={item.id} className="rounded-2xl border border-line bg-slate-50 p-4">
+              <div key={item.id} className="rounded-[24px] border border-line bg-slate-50/80 p-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="font-medium">{item.filename}</p>
